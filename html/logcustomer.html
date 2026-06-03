@@ -1,0 +1,297 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Masuk UMKM Elevate</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#b2c5ff",
+                    "secondary-fixed-dim": "#b4c7f1",
+                    "tertiary-fixed-dim": "#c3c7ca",
+                    "surface-container-low": "#f0f3ff",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#0052cc",
+                    "on-surface": "#101c2d",
+                    "primary": "#003d9b",
+                    "surface-tint": "#0c56d0",
+                    "surface-container": "#e7eeff",
+                    "on-tertiary-fixed-variant": "#43474a",
+                    "surface-variant": "#d7e3fb",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#f9f9ff",
+                    "tertiary-container": "#575b5e",
+                    "on-surface-variant": "#434654",
+                    "secondary-container": "#bfd2fd",
+                    "on-background": "#101c2d",
+                    "on-tertiary-fixed": "#181c1e",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#c3c6d6",
+                    "on-secondary-container": "#475a7e",
+                    "on-primary-container": "#c4d2ff",
+                    "on-primary-fixed": "#001848",
+                    "secondary-fixed": "#d7e2ff",
+                    "surface-dim": "#cedbf2",
+                    "surface": "#f9f9ff",
+                    "surface-container-highest": "#d7e3fb",
+                    "on-secondary-fixed": "#041b3c",
+                    "outline": "#737685",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#dae2ff",
+                    "surface-container-high": "#dee9ff",
+                    "background": "#f9f9ff",
+                    "inverse-primary": "#b2c5ff",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#404446",
+                    "inverse-surface": "#253143",
+                    "inverse-on-surface": "#ebf1ff",
+                    "on-primary-fixed-variant": "#0040a2",
+                    "on-tertiary-container": "#d0d3d6",
+                    "on-secondary-fixed-variant": "#34476a",
+                    "error": "#ba1a1a",
+                    "secondary": "#4c5e83",
+                    "tertiary-fixed": "#e0e3e6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "margin-desktop": "40px",
+                    "container-max": "1280px",
+                    "unit": "8px",
+                    "stack-md": "16px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-soft-gradient {
+            background: radial-gradient(circle at 0% 0%, #e7eeff 0%, #f9f9ff 50%, #d7e3fb 100%);
+        }
+        .login-card {
+            box-shadow: 0px 12px 24px rgba(23, 43, 77, 0.08);
+            backdrop-filter: blur(8px);
+        }
+        .loading-shimmer {
+            background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.3) 50%, transparent 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex items-center justify-center p-margin-mobile md:p-0 bg-soft-gradient overflow-hidden">
+<!-- Subtle Background Element -->
+<div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+<div class="absolute -top-[10%] -left-[5%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-[10%] -right-[5%] w-[40%] h-[40%] bg-secondary/5 rounded-full blur-[120px]"></div>
+</div>
+<!-- Main Content Container -->
+<main class="relative z-10 w-full max-w-md fade-in">
+<!-- Header / Logo -->
+<div class="text-center mb-stack-lg">
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight mb-2">UMKM Elevate</h1>
+<p class="font-body-md text-body-md text-secondary">Memberdayakan Bisnis Lokal untuk Berkembang.</p>
+</div>
+<!-- Auth Card -->
+<div class="bg-surface-container-lowest login-card border border-outline-variant rounded-xl p-8 md:p-10 transition-all duration-300" id="auth-card">
+<div id="login-view">
+<div class="mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Selamat Datang Kembali</h2>
+<p class="font-body-sm text-body-sm text-outline">Masuk untuk mengelola dasbor bisnis Anda.</p>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-2 gap-stack-md mb-stack-lg">
+<button class="flex items-center justify-center gap-2 py-3 px-4 border border-outline-variant rounded-xl hover:bg-surface-container transition-colors duration-200">
+<img alt="Google Logo" class="w-5 h-5" src="https://i.pinimg.com/736x/33/69/d7/3369d7dc815cd7ef054cf4453cf26c20.jpg">
+<span class="font-label-md text-label-md text-on-surface">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-3 px-4 border border-outline-variant rounded-xl hover:bg-surface-container transition-colors duration-200">
+<span class="material-symbols-outlined text-[20px] text-on-surface">account_circle</span>
+<span class="font-label-md text-label-md text-on-surface">Apple ID</span>
+</button>
+</div>
+<div class="flex items-center gap-4 mb-stack-lg">
+<div class="flex-grow h-[1px] bg-outline-variant"></div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">atau email</span>
+<div class="flex-grow h-[1px] bg-outline-variant"></div>
+</div>
+<!-- Form -->
+<form class="space-y-stack-md" id="login-form">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Gmail</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-200 font-body-md text-body-md" placeholder="iwantirta@iwantirta.com" required="" type="email">
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<label class="block font-label-md text-label-md text-on-surface">Kata Sandi</label>
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="#">Pusat Bantuan</a>
+</div>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-200 font-body-md text-body-md" placeholder="••••••••" required="" type="password">
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-headline-md text-body-md py-4 rounded-xl shadow-sm hover:shadow-md active:scale-95 transition-all duration-200 mt-2 relative overflow-hidden" id="submit-btn" type="submit">
+<span id="btn-text" class="">Masuk</span>
+<div class="hidden absolute inset-0 bg-primary flex items-center justify-center" id="btn-loader">
+<div class="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+</div>
+</button>
+</form>
+<p class="text-center mt-stack-lg font-body-sm text-body-sm text-secondary">Belum punya akun? <button class="text-primary font-bold hover:underline" onclick="toggleAuth()">Buat akun</button></p>
+</div>
+<!-- Sign Up View (Hidden by default) -->
+<div class="hidden" id="signup-view">
+<div class="mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Buat Akun</h2>
+<p class="font-body-sm text-body-sm text-outline">Bergabunglah dengan komunitas UMKM lokal yang berkembang.</p>
+</div>
+<form class="space-y-stack-md" id="signup-form">
+<div class="grid grid-cols-2 gap-stack-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Email</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-200 font-body-md text-body-md" placeholder="John" required="" type="text">
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Email</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-200 font-body-md text-body-md" placeholder="Doe" required="" type="text">
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Email</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-200 font-body-md text-body-md" placeholder="nama@perusahaan.com" required="" type="email">
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1">Email</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-200 font-body-md text-body-md" placeholder="Min. 8 characters" required="" type="password">
+</div>
+<div class="flex items-start gap-2 py-2">
+<input class="mt-1 rounded text-primary focus:ring-primary" id="terms" type="checkbox" placeholder="Min. 8 karakter">
+<label class="font-body-sm text-body-sm text-secondary" for="terms">Saya setuju dengan <a class="text-primary hover:underline" href="#">Pusat Bantuan</a> dan <a class="text-primary hover:underline" href="#">Keamanan</a>.</label>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-headline-md text-body-md py-4 rounded-xl shadow-sm hover:shadow-md active:scale-95 transition-all duration-200 mt-2" type="submit">Mulai Sekarang</button>
+</form>
+<p class="text-center mt-stack-lg font-body-sm text-body-sm text-secondary">Sudah punya akun? <button class="text-primary font-bold hover:underline" onclick="toggleAuth()">Masuk</button></p>
+</div>
+</div>
+<!-- Footer Links -->
+<div class="mt-stack-lg flex justify-center gap-gutter">
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" href="#">Pusat Bantuan</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" href="#">Keamanan</a>
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" href="#">Bahasa</a>
+</div>
+</main>
+<!-- Visual Polish / Floating Shapes -->
+<div class="fixed top-20 right-20 w-32 h-32 bg-secondary-container/30 rounded-full blur-3xl"></div>
+<div class="fixed bottom-20 left-20 w-48 h-48 bg-primary-container/20 rounded-full blur-3xl"></div>
+<script>
+        function toggleAuth() {
+            
+            const loginView = document.getElementById('login-view');
+            const signupView = document.getElementById('signup-view');
+            const card = document.getElementById('auth-card');
+
+            card.classList.add('opacity-0', 'scale-95');
+            
+            setTimeout(() => {
+                if (loginView.classList.contains('hidden')) {
+                    loginView.classList.remove('hidden');
+                    signupView.classList.add('hidden');
+                } else {
+                    loginView.classList.add('hidden');
+                    signupView.classList.remove('hidden');
+                }
+                card.classList.remove('opacity-0', 'scale-95');
+            }, 300);
+        }
+
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            const loader = document.getElementById('btn-loader');
+            const btnText = document.getElementById('btn-text');
+
+            btn.disabled = true;
+            loader.classList.remove('hidden');
+            btnText.classList.add('opacity-0');
+
+            // Simulate transition animation
+            setTimeout(() => {
+                document.body.classList.add('transition-all', 'duration-1000', 'opacity-0', 'scale-105');
+                setTimeout(() => {
+                    alert('Authenticated! Navigating to dashboard...');
+                    
+                    // Logic to redirect would go here
+                    loader.classList.add('hidden');
+                    btnText.classList.remove('opacity-0');
+                    btn.disabled = false;
+                    document.body.classList.remove('opacity-0', 'scale-105');
+                }, 1000);
+            }, 1500);
+        });
+
+        // Add visual micro-interaction for focus states
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('scale-[1.01]');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+    </script>
+
+
+</body></html>

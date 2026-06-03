@@ -1,0 +1,405 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>PasarUMKM Seller Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#b2c5ff",
+                        "secondary-fixed-dim": "#b4c7f1",
+                        "tertiary-fixed-dim": "#c3c7ca",
+                        "surface-container-low": "#f0f3ff",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#0052cc",
+                        "on-surface": "#101c2d",
+                        "primary": "#003d9b",
+                        "surface-tint": "#0c56d0",
+                        "surface-container": "#e7eeff",
+                        "on-tertiary-fixed-variant": "#43474a",
+                        "surface-variant": "#d7e3fb",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f9f9ff",
+                        "tertiary-container": "#575b5e",
+                        "on-surface-variant": "#434654",
+                        "secondary-container": "#bfd2fd",
+                        "on-background": "#101c2d",
+                        "on-tertiary-fixed": "#181c1e",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c3c6d6",
+                        "on-secondary-container": "#475a7e",
+                        "on-primary-container": "#c4d2ff",
+                        "on-primary-fixed": "#001848",
+                        "secondary-fixed": "#d7e2ff",
+                        "surface-dim": "#cedbf2",
+                        "surface": "#f9f9ff",
+                        "surface-container-highest": "#d7e3fb",
+                        "on-secondary-fixed": "#041b3c",
+                        "outline": "#737685",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#dae2ff",
+                        "surface-container-high": "#dee9ff",
+                        "background": "#f9f9ff",
+                        "inverse-primary": "#b2c5ff",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#404446",
+                        "inverse-surface": "#253143",
+                        "inverse-on-surface": "#ebf1ff",
+                        "on-primary-fixed-variant": "#0040a2",
+                        "on-tertiary-container": "#d0d3d6",
+                        "on-secondary-fixed-variant": "#34476a",
+                        "error": "#ba1a1a",
+                        "secondary": "#4c5e83",
+                        "tertiary-fixed": "#e0e3e6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "margin-desktop": "40px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "stack-md": "16px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F4F7FA; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border: 1px solid #E1E5EB; }
+        .card-shadow { box-shadow: 0px 4px 12px rgba(23, 43, 77, 0.05); }
+    </style>
+</head>
+<body class="text-on-surface">
+<div class="flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-[#172B4D] text-white flex-shrink-0 hidden md:flex flex-col sticky top-0 h-screen">
+<div class="p-stack-lg flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="storefront">storefront</span>
+</div>
+<span class="font-headline-md text-headline-md font-bold tracking-tight">PasarUMKM</span>
+</div>
+<nav class="flex-1 px-4 mt-stack-md space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary-container text-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-white/70 hover:bg-white/10 transition-all" href="historypem.html">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-white/70 hover:bg-white/10 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-white/70 hover:bg-white/10 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<div class="pt-stack-lg border-t border-white/10 mt-stack-lg">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-white/70 hover:bg-white/10 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+</nav>
+<div class="p-6 bg-white/5 m-4 rounded-2xl">
+<p class="font-label-sm text-label-sm text-white/50 uppercase tracking-widest mb-2">Seller Hub</p>
+<button class="w-full py-2 bg-primary text-white rounded-lg font-label-md text-label-md hover:bg-surface-tint transition-all">
+                    Upgrade Pro
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto">
+<!-- Header -->
+<header class="bg-white border-b border-outline-variant px-margin-desktop py-4 flex justify-between items-center sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2 text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div>
+<h1 class="font-headline-md text-headline-md text-on-surface">Seller Dashboard</h1>
+<p class="font-body-sm text-body-sm text-outline">Iwan Tirta</p>
+</div>
+</div>
+<div class="flex items-center gap-gutter">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-xl w-64 focus:ring-2 focus:ring-primary/20 font-body-sm text-body-sm" placeholder="Search orders, products..." type="text">
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-outline hover:bg-surface-variant rounded-full transition-all relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed">
+    <a href="profil.html">
+<img alt="Profile" data-alt="A professional headshot of a smiling business owner in a bright, modern office setting. The lighting is soft and warm, reflecting a friendly and successful atmosphere that aligns with the clean, minimalist UMKM dashboard aesthetic. High-quality digital photography with a blurred background of a minimalist desk." src="https://i.pinimg.com/736x/b5/8b/af/b58baf6af34649e3c5cff86047721237.jpg">
+</div>
+</div>
+</div>
+</a>
+</header>
+<div class="p-margin-desktop space-y-gutter max-w-[1200px]">
+<!-- Quick Actions & Stats -->
+<div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-stack-lg">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-gutter flex-1 w-full">
+<div class="bg-white p-6 rounded-xl card-shadow border border-outline-variant group hover:border-primary transition-all">
+<div class="flex items-center justify-between mb-4">
+<div class="p-3 bg-primary-fixed-dim/20 text-primary rounded-xl group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+<span class="text-success font-label-md text-label-md text-green-600">+12%</span>
+</div>
+<h3 class="font-label-md text-label-md text-outline">Total Sales</h3>
+<p class="font-headline-md text-headline-md font-bold mt-1">Rp 12.450.000</p>
+</div>
+<div class="bg-white p-6 rounded-xl card-shadow border border-outline-variant group hover:border-primary transition-all">
+<div class="flex items-center justify-between mb-4">
+<div class="p-3 bg-secondary-fixed-dim/20 text-secondary rounded-xl group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+</div>
+<span class="font-label-md text-label-md text-primary">24 Pending</span>
+</div>
+<h3 class="font-label-md text-label-md text-outline">Active Orders</h3>
+<p class="font-headline-md text-headline-md font-bold mt-1">156</p>
+</div>
+<div class="bg-white p-6 rounded-xl card-shadow border border-outline-variant group hover:border-primary transition-all">
+<div class="flex items-center justify-between mb-4">
+<div class="p-3 bg-tertiary-fixed-dim/20 text-tertiary rounded-xl group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="inventory">inventory</span>
+</div>
+<span class="font-label-md text-label-md text-error">5 Low Stock</span>
+</div>
+<h3 class="font-label-md text-label-md text-outline">Total Products</h3>
+<p class="font-headline-md text-headline-md font-bold mt-1">42</p>
+</div>
+</div>
+<button class="bg-primary text-white px-6 py-4 rounded-xl flex items-center gap-2 hover:bg-surface-tint shadow-lg hover:scale-[1.02] transition-all whitespace-nowrap">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-label-md text-label-md">Add New Product</span>
+</button>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Sales Chart (Main Content) -->
+<div class="lg:col-span-2 bg-white p-gutter rounded-xl card-shadow border border-outline-variant">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-md text-headline-md">Revenue Growth</h2>
+<select class="bg-surface-container border-none rounded-lg font-label-md text-label-md pr-10">
+<option>Last 7 Days</option>
+<option>Last 30 Days</option>
+</select>
+</div>
+<div class="h-64 flex items-end justify-between gap-2 pt-4">
+<!-- Simple CSS Bar Chart -->
+<div class="flex-1 bg-primary-container/20 rounded-t-lg h-[40%] hover:bg-primary transition-all relative group">
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Mon</span>
+</div>
+<div class="flex-1 bg-primary-container/20 rounded-t-lg h-[65%] hover:bg-primary transition-all relative group">
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Tue</span>
+</div>
+<div class="flex-1 bg-primary-container/20 rounded-t-lg h-[55%] hover:bg-primary transition-all relative group">
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Wed</span>
+</div>
+<div class="flex-1 bg-primary rounded-t-lg h-[85%] relative group">
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Thu</span>
+</div>
+<div class="flex-1 bg-primary-container/20 rounded-t-lg h-[45%] hover:bg-primary transition-all relative group">
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Fri</span>
+</div>
+<div class="flex-1 bg-primary-container/20 rounded-t-lg h-[75%] hover:bg-primary transition-all relative group">
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Sat</span>
+</div>
+<div class="flex-1 bg-primary-container/20 rounded-t-lg h-[60%] hover:bg-primary transition-all relative group">
+<span class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Sun</span>
+</div>
+</div>
+</div>
+<!-- Top Selling Products -->
+<div class="bg-white p-gutter rounded-xl card-shadow border border-outline-variant">
+<h2 class="font-headline-md text-headline-md mb-6">Top Products</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden">
+<img alt="Product" data-alt="A close-up, high-end commercial photograph of organic Indonesian coffee beans in a premium, minimalist kraft paper packaging. The lighting is soft and artistic, highlighting the texture of the beans and the elegant typography on the label, fitting the professional aesthetic of a modern UMKM brand." src="https://www.iwantirtabatik.com/5742-superlarge_default_2x/boket-peksi-jalak.jpg">
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md">Boket Peksi Jalak</h4>
+<p class="font-body-sm text-body-sm text-outline">42 Sold</p>
+</div>
+<p class="font-label-md text-label-md text-primary">Rp 9.990.000k</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden">
+<img alt="Product" data-alt="An exquisite, handcrafted batik silk scarf displayed elegantly against a soft, neutral grey background. The intricate traditional patterns are captured in sharp detail, emphasizing the premium quality and cultural heritage of the artisan-made garment. Minimalist lighting and a high-fashion photography style." src="https://www.iwantirtabatik.com/5754-home_default_2x/peksi-boket-kedungwuni.jpg">
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md">Peksi Boket Kedungwuni</h4>
+<p class="font-body-sm text-body-sm text-outline">28 Sold</p>
+</div>
+<p class="font-label-md text-label-md text-primary">Rp9.990.000k</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container overflow-hidden">
+<img alt="Product" data-alt="A beautifully packaged artisanal sambal jar sitting on a rustic wooden table in a brightly lit kitchen. The label is modern and clean, showcasing the vibrant red color of the chili paste. The overall mood is authentic yet professional, emphasizing the local and handmade nature of the product." src="https://www.iwantirtabatik.com/5760-home_default_2x/vas-bunga-turki.jpg">
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md">Vas Bunga Turki</h4>
+<p class="font-body-sm text-body-sm text-outline">19 Sold</p>
+</div>
+<p class="font-label-md text-label-md text-primary">Rp 6.490.000k</p>
+</div>
+</div>
+<button class="w-full mt-6 py-2 border border-primary text-primary rounded-xl font-label-md text-label-md hover:bg-primary/5 transition-all">View All Inventory</button>
+</div>
+<!-- Recent Orders Table -->
+<div class="lg:col-span-3 bg-white rounded-xl card-shadow border border-outline-variant overflow-hidden">
+<div class="p-gutter border-b border-outline-variant flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md">Recent Orders</h2>
+<button class="text-primary font-label-md text-label-md hover:underline">Download CSV</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container font-label-md text-label-md text-outline">
+<tr>
+<th class="px-6 py-4">Order ID</th>
+<th class="px-6 py-4">Customer</th>
+<th class="px-6 py-4">Product</th>
+<th class="px-6 py-4">Date</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 text-right">Amount</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm">
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4 font-label-md">#ORD-24891</td>
+<td class="px-6 py-4">Budi Setiawan</td>
+<td class="px-6 py-4"> Kenanga sari</td>
+<td class="px-6 py-4 text-outline">Oct 24, 2026</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold">Shipped</span>
+</td>
+<td class="px-6 py-4 text-right font-bold">Rp 9.990.000</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4 font-label-md">#ORD-24890</td>
+<td class="px-6 py-4">Ani Wijaya</td>
+<td class="px-6 py-4">Telau Mangkuto Kenanga</td>
+<td class="px-6 py-4 text-outline">Oct 24, 2026</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-bold">Processing</span>
+</td>
+<td class="px-6 py-4 text-right font-bold">Rp 11.990.000</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4 font-label-md">#ORD-24889</td>
+<td class="px-6 py-4">Andi Pratama</td>
+<td class="px-6 py-4">Boket peksi Nalendro</td>
+<td class="px-6 py-4 text-outline">Oct 23, 2026</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold">Delivered</span>
+</td>
+<td class="px-6 py-4 text-right font-bold">7.490.000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto bg-on-surface text-surface border-t border-outline-variant mt-stack-lg">
+<div class="col-span-1 md:col-span-1">
+<span class="font-headline-sm text-headline-sm font-black text-surface-bright">PasarUMKM</span>
+<p class="mt-4 font-body-sm text-body-sm text-surface-variant/80">© 2024 UMKM Elevate. Empowering Local Businesses.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md font-bold">Seller Resources</h4>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-body-sm text-surface-variant/80 hover:text-primary-fixed transition-all" href="#">Merchant FAQ</a></li>
+<li><a class="font-body-sm text-body-sm text-surface-variant/80 hover:text-primary-fixed transition-all" href="#">Support Center</a></li>
+<li><a class="font-body-sm text-body-sm text-surface-variant/80 hover:text-primary-fixed transition-all" href="#">Seller Academy</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md font-bold">Legal</h4>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-body-sm text-surface-variant/80 hover:text-primary-fixed transition-all" href="#">Terms of Service</a></li>
+<li><a class="font-body-sm text-body-sm text-surface-variant/80 hover:text-primary-fixed transition-all" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-md text-label-md font-bold">Community</h4>
+<ul class="space-y-2">
+<li><a class="font-body-sm text-body-sm text-surface-variant/80 hover:text-primary-fixed transition-all" href="#">Sustainability</a></li>
+<li><a class="font-body-sm text-body-sm text-surface-variant/80 hover:text-primary-fixed transition-all" href="#">MSME Blog</a></li>
+</ul>
+</div>
+</footer>
+</main>
+</div>
+<!-- Mobile Navigation Bar -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-outline-variant flex justify-around py-3 px-6 z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-outline">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="text-[10px]">Orders</span>
+</button>
+<button class="flex flex-col items-center gap-1 -mt-8 bg-primary text-white p-3 rounded-full shadow-lg">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-outline">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="text-[10px]">Products</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-outline">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="text-[10px]">Account</span>
+</button>
+</nav>
+<script>
+        // Simple interactivity for bar hover effect simulation
+        document.querySelectorAll('.flex-1.bg-primary-container\\/20').forEach(bar => {
+            bar.addEventListener('mouseenter', () => {
+                bar.classList.remove('bg-primary-container/20');
+                bar.classList.add('bg-primary');
+            });
+            bar.addEventListener('mouseleave', () => {
+                if(!bar.classList.contains('bg-primary-container')) { // ignore the active one if we had one
+                    bar.classList.add('bg-primary-container/20');
+                    bar.classList.remove('bg-primary');
+                }
+            });
+        });
+    </script>
+</body></html>

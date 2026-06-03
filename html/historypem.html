@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(225, 229, 235, 0.5);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f0f3ff",
+                    "inverse-primary": "#b2c5ff",
+                    "secondary-fixed-dim": "#b4c7f1",
+                    "tertiary-fixed": "#e0e3e6",
+                    "on-primary-container": "#c4d2ff",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#475a7e",
+                    "tertiary-container": "#575b5e",
+                    "surface": "#f9f9ff",
+                    "surface-variant": "#d7e3fb",
+                    "outline-variant": "#c3c6d6",
+                    "on-tertiary-fixed-variant": "#43474a",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#253143",
+                    "secondary": "#4c5e83",
+                    "on-secondary-fixed": "#041b3c",
+                    "surface-dim": "#cedbf2",
+                    "on-tertiary-fixed": "#181c1e",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#c3c7ca",
+                    "primary-fixed-dim": "#b2c5ff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#d7e3fb",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#34476a",
+                    "on-tertiary-container": "#d0d3d6",
+                    "primary-container": "#0052cc",
+                    "tertiary": "#404446",
+                    "secondary-container": "#bfd2fd",
+                    "primary": "#003d9b",
+                    "on-primary-fixed": "#001848",
+                    "background": "#f9f9ff",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#434654",
+                    "on-background": "#101c2d",
+                    "outline": "#737685",
+                    "inverse-on-surface": "#ebf1ff",
+                    "surface-container-high": "#dee9ff",
+                    "surface-container": "#e7eeff",
+                    "secondary-fixed": "#d7e2ff",
+                    "on-surface": "#101c2d",
+                    "on-primary-fixed-variant": "#0040a2",
+                    "primary-fixed": "#dae2ff",
+                    "surface-tint": "#0c56d0",
+                    "surface-bright": "#f9f9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "stack-sm": "8px",
+                    "gutter": "24px",
+                    "stack-lg": "32px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "stack-md": "16px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-container shadow-sm fixed top-0 w-full z-50 h-16 border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-16">
+<div class="flex items-center gap-gutter">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary">PasarUMKM</span>
+<nav class="hidden md:flex gap-stack-lg">
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors font-label-md" href="../Beranda.html">Marketplace</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors font-label-md" href="#">Explore</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors font-label-md" href="#">Categories</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors font-label-md" href="#">Deals</a>
+</nav>
+</div>
+<div class="flex items-center gap-stack-md">
+<!-- <button class="hidden lg:block px-4 py-2 text-primary font-label-md hover:bg-surface-container-high transition-colors">Seller Dashboard</button> -->
+<div class="flex items-center gap-stack-sm">
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors"><span class="material-symbols-outlined text-on-surface-variant">notifications</span></button>
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors"><span class="material-symbols-outlined text-on-surface-variant">shopping_cart</span></button>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a smiling middle-aged man with short dark hair, wearing a clean white business shirt. The background is a soft, blurred office interior with neutral tones and modern lighting. The style is clean, corporate, and trustworthy, perfectly reflecting a premium merchant profile on a modern digital platform." src="https://i.pinimg.com/736x/b5/8b/af/b58baf6af34649e3c5cff86047721237.jpg"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Sidebar & Content Layout -->
+<div class="flex max-w-container-max mx-auto pt-16">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col h-[calc(100vh-64px)] fixed left-0 w-64 bg-secondary dark:bg-inverse-surface shadow-lg pt-8 pb-8">
+<div class="px-6 mb-8 flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-full border-4 border-on-primary/20 mb-4 overflow-hidden">
+<img alt="Seller Profile Avatar" class="w-full h-full object-cover" data-alt="A high-quality portrait of Budi Santoso, a merchant with a friendly and professional expression, framed against a clean, minimalist studio background. The lighting is balanced and soft, emphasizing a reliable persona. The overall aesthetic is clean and modern, consistent with a high-end SaaS dashboard interface for MSMEs." src="https://i.pinimg.com/736x/b5/8b/af/b58baf6af34649e3c5cff86047721237.jpg"/>
+</div>
+<h2 class="text-on-primary font-headline-sm text-headline-sm">H.A.A.B.A.K</h2>
+<!-- <p class="text-on-primary/70 font-body-sm text-body-sm">Premium Merchant</p> -->
+</div>
+<!-- CTA CRITICAL -->
+ <a href="Dasbord.html">
+<div class="px-4 mb-8">
+<button class="w-full flex items-center justify-center gap-2 bg-primary-container text-on-primary py-4 px-4 rounded-xl font-label-md shadow-md scale-95 active:scale-90 transition-transform duration-150 group">
+<span class="material-symbols-outlined group-hover:rotate-12 transition-transform" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                    Buka Dashboard Penjual
+                </button>
+</div>
+</a>
+<nav class="flex-1"><a class="flex items-center gap-stack-sm text-surface-variant dark:text-outline-variant py-3 px-6 hover:bg-secondary-container/10 hover:text-white transition-all" href="profil.html">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm">Profile Details</span>
+</a>
+<a class="flex items-center gap-stack-sm bg-primary-container text-on-primary-container rounded-r-full py-3 px-6 border-l-4 border-primary transition-all shadow-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+<span class="font-label-sm">Order History</span>
+</a>
+<a class="flex items-center gap-stack-sm text-surface-variant dark:text-outline-variant py-3 px-6 hover:bg-secondary-container/10 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-label-sm">My Products</span>
+</a>
+<a class="flex items-center gap-stack-sm text-surface-variant dark:text-outline-variant py-3 px-6 hover:bg-secondary-container/10 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-sm">Account Settings</span>
+</a>
+<a class="flex items-center gap-stack-sm text-surface-variant dark:text-outline-variant py-3 px-6 hover:bg-secondary-container/10 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">security</span>
+<span class="font-label-sm">Security</span>
+</a></nav>
+<div class="mt-auto border-t border-on-primary/10 pt-4">
+<a class="flex items-center gap-stack-sm text-surface-variant dark:text-outline-variant py-3 px-6 hover:bg-secondary-container/10 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-sm">Help Center</span>
+</a>
+<a class="flex items-center gap-stack-sm text-surface-variant dark:text-outline-variant py-3 px-6 hover:bg-secondary-container/10 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-error">logout</span>
+<span class="font-label-sm">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 lg:ml-64 p-margin-mobile md:p-margin-desktop bg-background min-h-screen">
+<div class="max-w-4xl mx-auto"><div class="mb-gutter">
+<h1 class="text-headline-lg font-headline-lg text-on-background mb-1">Riwayat Pesanan</h1>
+<p class="text-body-md text-on-surface-variant">Kelola dan pantau semua transaksi penjualan Anda.</p>
+</div>
+<div class="flex border-b border-outline-variant mb-gutter overflow-x-auto">
+<button class="px-6 py-3 text-label-md border-b-2 border-primary text-primary whitespace-nowrap">Semua</button>
+<button class="px-6 py-3 text-label-md text-on-surface-variant hover:text-primary whitespace-nowrap">Berlangsung</button>
+<button class="px-6 py-3 text-label-md text-on-surface-variant hover:text-primary whitespace-nowrap">Selesai</button>
+<button class="px-6 py-3 text-label-md text-on-surface-variant hover:text-primary whitespace-nowrap">Dibatalkan</button>
+</div>
+<div class="space-y-stack-md">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex flex-wrap justify-between items-center mb-4 pb-4 border-b border-outline-variant">
+<div class="flex gap-stack-md items-center">
+<span class="text-label-md font-bold text-on-background">INV/20240315/PASAR/3892</span>
+<span class="text-body-sm text-on-surface-variant">15 Mar 2024</span>
+</div>
+<span class="bg-success-container/10 text-green-600 px-3 py-1 rounded-pill text-label-sm font-bold">Selesai</span>
+</div>
+<div class="flex gap-gutter">
+<div class="w-20 h-20 rounded-lg overflow-hidden border border-outline-variant">
+<img alt="Product Image" class="w-full h-full object-cover" src="https://www.iwantirtabatik.com/5624-superlarge_default/boket-peksi-gunungan.jpg"/>
+</div>
+<div class="flex-1">
+<h4 class="text-body-md font-bold text-on-background">Boket Peksi Gunungan</h4>
+<p class="text-body-sm text-on-surface-variant">1 Barang x Rp 10,990,000</p>
+</div>
+<div class="text-right border-l border-outline-variant pl-gutter hidden md:block">
+<p class="text-body-sm text-on-surface-variant">Total Belanja</p>
+<p class="text-label-md font-bold text-on-background"> Rp 10,990,000</p>
+</div>
+</div>
+<div class="mt-4 flex justify-end gap-stack-sm">
+<button class="px-4 py-2 border border-outline text-on-surface text-label-sm rounded-lg hover:bg-surface-container-high">Lihat Detail</button>
+<button class="px-4 py-2 bg-primary text-on-primary text-label-sm rounded-lg">Chat Pembeli</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex flex-wrap justify-between items-center mb-4 pb-4 border-b border-outline-variant">
+<div class="flex gap-stack-md items-center">
+<span class="text-label-md font-bold text-on-background">INV/20240314/PASAR/3855</span>
+<span class="text-body-sm text-on-surface-variant">14 Mar 2026</span>
+</div>
+<span class="bg-primary-container/10 text-primary px-3 py-1 rounded-pill text-label-sm font-bold">Dikirim</span>
+</div>
+<div class="flex gap-gutter">
+<div class="w-20 h-20 rounded-lg overflow-hidden border border-outline-variant">
+<img alt="Product Image" class="w-full h-full object-cover" src="https://www.iwantirtabatik.com/5610-superlarge_default_2x/boket-peksi-nalendro.jpg"/>
+</div>
+<div class="flex-1">
+<h4 class="text-body-md font-bold text-on-background">Boket Peksi Nalendro</h4>
+<p class="text-body-sm text-on-surface-variant">2 Barang xRp 7,490,000</p>
+</div>
+<div class="text-right border-l border-outline-variant pl-gutter hidden md:block">
+<p class="text-body-sm text-on-surface-variant">Total Belanja</p>
+<p class="text-label-md font-bold text-on-background">Rp 14.980.000</p>
+</div>
+</div>
+<div class="mt-4 flex justify-end gap-stack-sm">
+<button class="px-4 py-2 border border-outline text-on-surface text-label-sm rounded-lg hover:bg-surface-container-high">Lacak</button>
+<button class="px-4 py-2 bg-primary text-on-primary text-label-sm rounded-lg">Chat Pembeli</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex flex-wrap justify-between items-center mb-4 pb-4 border-b border-outline-variant">
+<div class="flex gap-stack-md items-center">
+<span class="text-label-md font-bold text-on-background">INV/20240312/PASAR/3710</span>
+<span class="text-body-sm text-on-surface-variant">12 Mar 2024</span>
+</div>
+<span class="bg-error-container/10 text-error px-3 py-1 rounded-pill text-label-sm font-bold">Dibatalkan</span>
+</div>
+<div class="flex gap-gutter">
+<div class="w-20 h-20 rounded-lg overflow-hidden border border-outline-variant">
+<img alt="Product Image" class="w-full h-full object-cover" src="https://www.iwantirtabatik.com/5754-superlarge_default/peksi-boket-kedungwuni.jpg"/>
+</div>
+<div class="flex-1">
+<h4 class="text-body-md font-bold text-on-background">Peksi Boket Kedungwuni</h4>
+<p class="text-body-sm text-on-surface-variant">1 Barang x Rp 9,990,000</p>
+</div>
+<div class="text-right border-l border-outline-variant pl-gutter hidden md:block">
+<p class="text-body-sm text-on-surface-variant">Total Belanja</p>
+<p class="text-label-md font-bold text-on-background">Rp 9,990,000</p>
+</div>
+</div>
+<div class="mt-4 flex justify-end gap-stack-sm">
+<button class="px-4 py-2 border border-outline text-on-surface text-label-sm rounded-lg hover:bg-surface-container-high">Lihat Detail</button>
+</div>
+</div>
+</div></div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="w-full py-stack-lg px-margin-desktop bg-surface-container-highest dark:bg-surface-dim border-t border-outline-variant z-10 relative">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface">PasarUMKM</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-2">© 2024 PasarUMKM. Elevating Local Products.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-stack-lg">
+<a class="text-on-surface-variant hover:text-primary transition-all text-label-sm" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-label-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-label-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-label-sm" href="#">Help Center</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-label-sm" href="#">Merchant Handbook</a>
+</div>
+</div>
+</footer>
+<!-- Mobile BottomNavBar -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-surface border-t border-outline-variant flex justify-around items-center py-3 z-50">
+<button class="flex flex-col items-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-[10px] font-label-sm">Profil</span>
+</button>
+<button class="flex flex-col items-center text-on-surface-variant">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="text-[10px] font-label-sm">Order</span>
+</button>
+<button class="flex flex-col items-center -mt-8 bg-primary-container p-4 rounded-full text-on-primary shadow-lg border-4 border-surface">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+</button>
+<button class="flex flex-col items-center text-on-surface-variant">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-[10px] font-label-sm">Toko</span>
+</button>
+<button class="flex flex-col items-center text-on-surface-variant">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-label-sm">Pengaturan</span>
+</button>
+</div>
+</body></html>

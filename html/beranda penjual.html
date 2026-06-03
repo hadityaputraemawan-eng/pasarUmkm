@@ -1,0 +1,469 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link rel="icon" href="asset/logo1.jpeg">
+<title>Pasar UMKM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9ff;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .hero-gradient {
+      background: linear-gradient(135deg, #dae2ff 0%, #f9f9ff 100%);
+    }
+    .product-card-shadow {
+      box-shadow: 0px 4px 12px rgba(23, 43, 77, 0.05);
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed-dim": "#b2c5ff",
+            "secondary-fixed-dim": "#b4c7f1",
+            "tertiary-fixed-dim": "#c3c7ca",
+            "surface-container-low": "#f0f3ff",
+            "on-tertiary": "#ffffff",
+            "primary-container": "#0052cc",
+            "on-surface": "#101c2d",
+            "primary": "#003d9b",
+            "surface-tint": "#0c56d0",
+            "surface-container": "#e7eeff",
+            "on-tertiary-fixed-variant": "#43474a",
+            "surface-variant": "#d7e3fb",
+            "on-error": "#ffffff",
+            "on-primary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "surface-bright": "#f9f9ff",
+            "tertiary-container": "#575b5e",
+            "on-surface-variant": "#434654",
+            "secondary-container": "#bfd2fd",
+            "on-background": "#101c2d",
+            "on-tertiary-fixed": "#181c1e",
+            "error-container": "#ffdad6",
+            "outline-variant": "#c3c6d6",
+            "on-secondary-container": "#475a7e",
+            "on-primary-container": "#c4d2ff",
+            "on-primary-fixed": "#001848",
+            "secondary-fixed": "#d7e2ff",
+            "surface-dim": "#cedbf2",
+            "surface": "#f9f9ff",
+            "surface-container-highest": "#d7e3fb",
+            "on-secondary-fixed": "#041b3c",
+            "outline": "#737685",
+            "on-error-container": "#93000a",
+            "primary-fixed": "#dae2ff",
+            "surface-container-high": "#dee9ff",
+            "background": "#f9f9ff",
+            "inverse-primary": "#b2c5ff",
+            "on-secondary": "#ffffff",
+            "tertiary": "#404446",
+            "inverse-surface": "#253143",
+            "inverse-on-surface": "#ebf1ff",
+            "on-primary-fixed-variant": "#0040a2",
+            "on-tertiary-container": "#d0d3d6",
+            "on-secondary-fixed-variant": "#34476a",
+            "error": "#ba1a1a",
+            "secondary": "#4c5e83",
+            "tertiary-fixed": "#e0e3e6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "stack-sm": "8px",
+            "margin-desktop": "40px",
+            "container-max": "1280px",
+            "unit": "8px",
+            "stack-md": "16px",
+            "margin-mobile": "16px",
+            "gutter": "24px",
+            "stack-lg": "32px"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-xl": ["Inter"],
+            "headline-md": ["Inter"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+            "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-surface dark:bg-on-background border-b border-outline-variant dark:border-outline shadow-sm">
+<nav class="flex justify-between items-center px-margin-desktop py-4 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-gutter">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Pasar UMKM</span>
+<!-- Search Bar Logic (on_left) -->
+<div class="hidden md:flex items-center bg-surface-container-low px-4 py-2 rounded-xl w-80 group focus-within:ring-2 focus-within:ring-primary/20 transition-all border border-outline-variant">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-sm w-full ml-2 text-on-surface" placeholder="Cari produk lokal..." type="text">
+</div>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 font-bold font-body-md text-body-md transition-all" href="#">Beranda</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim font-body-md text-body-md transition-all" href="#">Pasar</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim font-body-md text-body-md transition-all" href="#">Kategori</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim font-body-md text-body-md transition-all" href="#">Tentang Kami</a>
+</div>
+<div class="flex items-center gap-stack-md">
+<div class="flex items-center gap-stack-sm text-outline">
+<button class="p-2 hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors duration-200 rounded-full">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<a href="profilcus.html">
+<button class="p-2 hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors duration-200 rounded-full">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</a>
+</div>
+<div class="h-6 w-px bg-outline-variant mx-2"></div>
+<a href="logcustomer.html">
+<button class="px-4 py-2 text-primary font-label-md text-label-md hover:bg-primary/5 rounded-lg transition-all">Masuk</button>
+</a>
+<!-- <button class="bg-primary text-on-primary px-6 py-2 rounded-xl font-label-md text-label-md hover:scale-95 duration-150 ease-in-out">Pusat Penjual</button> -->
+</div>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-lg">
+<!-- Hero Banner Section -->
+<section class="relative h-[480px] rounded-[32px] overflow-hidden mb-12 hero-gradient group transition-all duration-1000 opacity-100 translate-y-0">
+<img alt="Local Artisans" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60 transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic, high-quality photograph showing a vibrant Indonesian traditional market with modern artisanal touches. The lighting is warm and natural, filtering through woven bamboo structures, highlighting handcrafted textiles and organic food products. The visual style is premium and clean, focusing on the rich textures of local craftsmanship. The color palette emphasizes soft blues, warm wood tones, and pristine whites, creating a professional and welcoming atmosphere for an e-commerce platform." src="https://i.pinimg.com/1200x/40/3a/8e/403a8e3883ac9e7f357e6727589dd7f7.jpg">
+<div class="absolute inset-0 flex flex-col justify-center px-16 max-w-2xl">
+<span class="text-primary font-label-md text-label-md bg-surface-variant/50 self-start px-3 py-1 rounded-full mb-4">Penjual Unggulan</span>
+<h1 class="font-headline-xl text-headline-xl text-on-background mb-4 leading-tight">Tingkatkan Gaya Hidup Anda dengan <span class="text-primary">Kerajinan Lokal Autentik.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Dukung UMKM lokal dan temukan produk unik yang dikirim langsung dari komunitas kami ke depan pintu Anda.</p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-2">Jelajahi Koleksi <span class="material-symbols-outlined">arrow_forward</span></button>
+<a href="logPenjual.html">
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-container transition-all">Gabung sebagai Penjual</button>
+</a>
+</div>
+</div>
+</section>
+<!-- Category Filters -->
+<section class="mb-12 transition-all duration-1000 opacity-100 translate-y-0">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline-md text-headline-md text-on-background">Cari Berdasarkan Kategori</h2>
+<button class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline">Lihat Semua <span class="material-symbols-outlined text-[18px]">chevron_right</span></button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-stack-md">
+<button class="flex flex-col items-center p-6 bg-white border border-outline-variant rounded-2xl hover:border-primary hover:shadow-lg transition-all group">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mb-4 group-hover:bg-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-primary text-[32px]">restaurant</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Makanan Lokal</span>
+</button>
+<button class="flex flex-col items-center p-6 bg-white border border-outline-variant rounded-2xl hover:border-primary hover:shadow-lg transition-all group">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mb-4 group-hover:bg-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-primary text-[32px]">styler</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Fashion</span>
+</button>
+<button class="flex flex-col items-center p-6 bg-white border border-outline-variant rounded-2xl hover:border-primary hover:shadow-lg transition-all group">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mb-4 group-hover:bg-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-primary text-[32px]">brush</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Seni &amp; Kerajinan</span>
+</button>
+<button class="flex flex-col items-center p-6 bg-white border border-outline-variant rounded-2xl hover:border-primary hover:shadow-lg transition-all group" style="transform: scale(1);">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mb-4 group-hover:bg-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-primary text-[32px]">home_repair_service</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Dekorasi Rumah</span>
+</button>
+<button class="flex flex-col items-center p-6 bg-white border border-outline-variant rounded-2xl hover:border-primary hover:shadow-lg transition-all group" style="transform: scale(1);">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mb-4 group-hover:bg-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-primary text-[32px]">spa</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Kesehatan</span>
+</button>
+<button class="flex flex-col items-center p-6 bg-white border border-outline-variant rounded-2xl hover:border-primary hover:shadow-lg transition-all group" style="transform: scale(1);">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mb-4 group-hover:bg-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-primary text-[32px]">devices_other</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Teknologi</span>
+</button>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="mb-16 transition-all duration-1000 opacity-100 translate-y-0">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-md text-headline-md text-on-background">Populer Hari Ini</h2>
+<div class="flex gap-2">
+<select class="bg-surface-container-low border border-outline-variant rounded-lg px-4 py-2 font-label-md text-label-md focus:ring-primary">
+<option>Produk Terbaru</option>
+<option>Rating Tertinggi</option>
+<option>Harga Terendah</option>
+</select>
+</div>
+</div>
+<!-- Grid Content -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="bg-white rounded-2xl overflow-hidden product-card-shadow hover:-translate-y-1 transition-transform group border border-outline-variant/50">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img alt="Handcrafted Ceramic Vase" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A close-up, studio photograph of a handcrafted artisanal ceramic vase with a unique textured glaze. The lighting is soft and directional, casting subtle shadows that highlight the organic form and earthy pottery details. Set against a clean, minimalist off-white background to maintain a high-end e-commerce aesthetic. The color palette is composed of natural sandy tones and deep cobalt blue accents, reflecting a modern minimalist design ethos." src="https://tse4.mm.bing.net/th/id/OIP.stWMz35EdGu6zL9e6InV8QHaFH?pid=Api&P=0&h=180">
+<button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 glass-effect flex items-center justify-center text-on-surface hover:text-error transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="absolute bottom-4 left-4">
+<span class="px-3 py-1 rounded-full bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider">Stok Tersedia</span>
+</div>
+</div>
+<div class="p-4">
+<p class="text-outline text-[12px] font-medium uppercase mb-1">Craft &amp; Decor</p>
+<h3 class="font-label-md text-label-md text-on-surface mb-2 line-clamp-1">Supreme clay brick red</h3>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-[#FFAB00] text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">4.8</span>
+<span class="text-outline text-body-sm">(124 reviews)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-primary">Rp 4.995.000</span>
+<button class="w-10 h-10 rounded-xl bg-surface-container hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white rounded-2xl overflow-hidden product-card-shadow hover:-translate-y-1 transition-transform group border border-outline-variant/50">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img alt="Specialty Coffee Beans" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Premium packaging of specialty Arabica coffee beans from a local Indonesian plantation. The bag is elegantly designed with a minimalist matte black and white label. The setting is a bright, modern cafe interior with soft daylight. The image captures the rich textures of the coffee beans spilling out slightly. The visual style is crisp and professional, using high-key lighting and a sophisticated blue-tinted background for a clean marketplace look." src="https://i.pinimg.com/1200x/3a/91/ff/3a91ff312815fde5cf469f8bf2c68642.jpg">
+<button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 glass-effect flex items-center justify-center text-on-surface hover:text-error transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<p class="text-outline text-[12px] font-medium uppercase mb-1">Food &amp; Beverage</p>
+<h3 class="font-label-md text-label-md text-on-surface mb-2 line-clamp-1"> Yellow Trash Pouch Balenciaga’s</h3>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-[#FFAB00] text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">4.9</span>
+<span class="text-outline text-body-sm">(356 reviews)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-primary">Rp 31.611.400</span>
+<button class="w-10 h-10 rounded-xl bg-surface-container hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white rounded-2xl overflow-hidden product-card-shadow hover:-translate-y-1 transition-transform group border border-outline-variant/50">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img alt="Modern Batik Shirt" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A fashion-focused photograph of a modern Batik shirt with contemporary geometric patterns. The shirt is displayed on a minimalist wooden hanger against a clean white gallery wall. The lighting is bright and even, highlighting the intricate textile quality and vibrant indigo dyes. The aesthetic is clean-cut and stylish, reflecting a blend of traditional culture and modern fashion trends, suitable for a premium local marketplace." src="https://p16-images-sign-sg.tokopedia-static.net/tos-alisg-i-aphluv4xwc-sg/10f8a967ed8b4fe58d823475209a4d3a~tplv-aphluv4xwc-white-pad-v1:1600:1600.jpeg?lk3s=0ccea506&x-expires=1779424333&x-signature=mGQ2VFcCtME4I6xiMUu16V%2BmtEo%3D&x-signature-webp=QfaWCW9digyAgVR%2FGJyj3RepKTc%3D">
+<button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 glass-effect flex items-center justify-center text-on-surface hover:text-error transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="absolute bottom-4 left-4">
+<span class="px-3 py-1 rounded-full bg-error text-on-error text-[10px] font-bold uppercase tracking-wider">Diskon 1%</span>
+</div>
+</div>
+<div class="p-4">
+<p class="text-outline text-[12px] font-medium uppercase mb-1">Fashion</p>
+<h3 class="font-label-md text-label-md text-on-surface mb-2 line-clamp-1">JPG Jean Paul Gaultier Le Male Le Elixir Parfum 125Ml </h3>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-[#FFAB00] text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">4.7</span>
+<span class="text-outline text-body-sm">(89 reviews)</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-outline text-[12px] line-through"></span>
+<span class="font-headline-md text-headline-md text-primary">Rp 2.200.000</span>
+</div>
+<button class="w-10 h-10 rounded-xl bg-surface-container hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-white rounded-2xl overflow-hidden product-card-shadow hover:-translate-y-1 transition-transform group border border-outline-variant/50">
+<div class="relative aspect-square overflow-hidden bg-surface-container">
+<img alt="Organic Skincare" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A luxury display of organic skincare products made from local natural ingredients like turmeric and coconut. The glass jars have elegant, eco-friendly wooden caps. The arrangement is set on a marble surface with soft, diffused morning light creating a spa-like, serene mood. The color palette is dominated by fresh whites, soft greens, and natural textures, maintaining the modern minimalist and trustworthy brand identity of UMKM Elevate." src="https://www.mytheresa.com/image/1094/1238/100/05/P01130391.jpg">
+<button class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/80 glass-effect flex items-center justify-center text-on-surface hover:text-error transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<p class="text-outline text-[12px] font-medium uppercase mb-1">Beauty &amp; Health</p>
+<h3 class="font-label-md text-label-md text-on-surface mb-2 line-clamp-1">Loro Piana</h3>
+<div class="flex items-center gap-1 mb-3">
+<span class="material-symbols-outlined text-[#FFAB00] text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">5.0</span>
+<span class="text-outline text-body-sm">(212 reviews)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-primary">Rp 70.664.874</span>
+<button class="w-10 h-10 rounded-xl bg-surface-container hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- Bento Grid Section (Featured Merchants) -->
+<section class="mb-16 transition-all duration-1000 opacity-100 translate-y-0">
+<h2 class="font-headline-md text-headline-md text-on-background mb-8">Cerita Pilihan</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-gutter h-auto md:h-[600px]">
+<!-- Large Bento Item -->
+<div class="md:col-span-2 md:row-span-2 relative rounded-[32px] overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="A portrait of a smiling local Indonesian woman entrepreneur in her clean, organized workshop surrounded by her handcrafted goods. The workshop is bathed in warm, soft natural light. The aesthetic is documentary-style yet polished and premium, emphasizing the human element behind the products. The scene uses a rich, balanced color palette with deep blues and warm wooden accents to evoke a sense of trust and community support." src="https://i.pinimg.com/1200x/8b/60/08/8b600815bb56be6ee76e8b5bfeccd724.jpg">
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-10 left-10 right-10">
+<span class="bg-primary-container text-on-primary-container px-4 py-1 rounded-full text-label-sm font-bold mb-4 inline-block">Seri Pembuat</span>
+<h3 class="font-headline-lg text-headline-lg text-white mb-4">Memberdayakan 10.000+ Pengrajin Lokal</h3>
+<p class="text-white/80 font-body-md text-body-md max-w-lg mb-6">Temukan tangan dan hati di balik produk favorit Anda. Kami lebih dari sekadar pasar; kami adalah sebuah gerakan.</p>
+<button class="bg-white text-primary px-6 py-3 rounded-xl font-label-md text-label-md hover:bg-primary-fixed-dim transition-all">Baca Cerita Mereka</button>
+</div>
+</div>
+<!-- Top Small Bento -->
+<div class="relative rounded-[32px] overflow-hidden group bg-secondary-container">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-110" data-alt="A collection of beautifully arranged traditional Indonesian fabrics and contemporary crafts. The composition is artistic and clean, with a focus on textures and vibrant patterns. The lighting is high-key and bright, creating a modern and cheerful marketplace aesthetic. The visual style is premium, focusing on the quality of the products, with a color palette that includes soft blues and warm natural tones." src="https://i.pinimg.com/736x/d5/26/24/d52624b4d5dffcdafdd5b666e7c14cce.jpg">
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<h4 class="font-headline-md text-headline-md text-on-secondary-container mb-2">Utamakan Keberlanjutan</h4>
+<p class="text-on-secondary-container/80 font-body-sm text-body-sm">Komitmen kami terhadap praktik ramah lingkungan.</p>
+</div>
+</div>
+<!-- Bottom Small Bento -->
+<div class="relative rounded-[32px] overflow-hidden group bg-tertiary-fixed">
+<div class="absolute inset-0 p-8 flex flex-col justify-center items-center text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-[32px]">verified</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-tertiary-fixed mb-2">Kualitas Terverifikasi</h4>
+<p class="text-on-tertiary-fixed-variant font-body-sm text-body-sm">Setiap produk dipilih langsung untuk kualitas dan keaslian.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Section -->
+<footer class="bg-on-surface dark:bg-surface-container-lowest border-t border-outline-variant py-12">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Brand Column -->
+<div class="flex flex-col gap-4">
+<span class="font-headline-sm text-headline-sm font-black text-surface-bright">UMKM Elevate</span>
+<p class="text-surface-variant/80 dark:text-on-surface-variant/80 font-body-sm text-body-sm leading-relaxed">Pasar terkemuka untuk UMKM Indonesia. Kami menjembatani bakat lokal dengan pasar global melalui teknologi dan desain.</p>
+<div class="flex gap-4 mt-2">
+<a class="text-surface-variant hover:text-primary-fixed transition-all" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+<a class="text-surface-variant hover:text-primary-fixed transition-all" href="#"><span class="material-symbols-outlined">hub</span></a>
+<a class="text-surface-variant hover:text-primary-fixed transition-all" href="#"><span class="material-symbols-outlined">language</span></a>
+</div>
+</div>
+<!-- Links Columns -->
+<div>
+<h5 class="text-surface-bright font-label-md text-label-md mb-6 uppercase tracking-wider">Perusahaan</h5>
+<ul class="flex flex-col gap-4">
+<li class=""><a class="text-surface-variant/80 dark:text-on-surface-variant/80 font-body-sm text-body-sm hover:text-primary-fixed dark:hover:text-primary-fixed-dim transition-all" href="#">Tentang Kami</a></li>
+<li class=""><a class="text-surface-variant/80 dark:text-on-surface-variant/80 font-body-sm text-body-sm hover:text-primary-fixed dark:hover:text-primary-fixed-dim transition-all" href="#">Keberlanjutan</a></li>
+<li class=""><a class="text-surface-variant/80 dark:text-on-surface-variant/80 font-body-sm text-body-sm hover:text-primary-fixed dark:hover:text-primary-fixed-dim transition-all" href="#">Ketentuan Layanan</a></li>
+<li class=""><a class="text-surface-variant/80 dark:text-on-surface-variant/80 font-body-sm text-body-sm hover:text-primary-fixed dark:hover:text-primary-fixed-dim transition-all" href="#">Kebijakan Privasi</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-surface-bright font-label-md text-label-md mb-6 uppercase tracking-wider">Bantuan</h5>
+<ul class="flex flex-col gap-4">
+<li class=""><a class="text-surface-variant/80 dark:text-on-surface-variant/80 font-body-sm text-body-sm hover:text-primary-fixed dark:hover:text-primary-fixed-dim transition-all" href="#">Pusat Bantuan</a></li>
+<li class=""><a class="text-surface-variant/80 dark:text-on-surface-variant/80 font-body-sm text-body-sm hover:text-primary-fixed dark:hover:text-primary-fixed-dim transition-all" href="#">FAQ Penjual</a></li>
+<li class=""><a class="text-surface-variant/80 dark:text-on-surface-variant/80 font-body-sm text-body-sm hover:text-primary-fixed dark:hover:text-primary-fixed-dim transition-all" href="#">Info Pengiriman</a></li>
+<li class=""><a class="text-surface-variant/80 dark:text-on-surface-variant/80 font-body-sm text-body-sm hover:text-primary-fixed dark:hover:text-primary-fixed-dim transition-all" href="#">Pengembalian Dana</a></li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div>
+<h5 class="text-surface-bright font-label-md text-label-md mb-6 uppercase tracking-wider">Tetap Terupdate</h5>
+<p class="text-surface-variant/80 dark:text-on-surface-variant/80 font-body-sm text-body-sm mb-4">Berlangganan untuk temuan lokal pilihan dan penawaran eksklusif.</p>
+<div class="flex bg-surface-variant/10 rounded-xl border border-outline-variant/30 p-1">
+<input class="bg-transparent border-none focus:ring-0 text-white text-body-sm w-full px-3" placeholder="Email Anda" type="email">
+<button class="bg-primary-fixed text-on-primary-fixed px-4 py-2 rounded-lg font-label-md text-label-md hover:scale-95 transition-all">Gabung</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-12 pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-surface-variant/60 font-body-sm text-body-sm">© 2024 UMKM Elevate. Memberdayakan Bisnis Lokal.</p>
+<div class="flex gap-6">
+<span class="flex items-center gap-2 text-surface-variant/60 text-body-sm"><span class="material-symbols-outlined text-[18px]">payments</span> Pembayaran Aman</span>
+<span class="flex items-center gap-2 text-surface-variant/60 text-body-sm"><span class="material-symbols-outlined text-[18px]">verified_user</span> Penjual Terverifikasi</span>
+</div>
+</div>
+</footer>
+<script>
+    // Simple micro-interaction for smooth scrolling or button effects
+    document.querySelectorAll('button').forEach(button => {
+      button.addEventListener('mousedown', () => {
+        button.style.transform = 'scale(0.95)';
+      });
+      button.addEventListener('mouseup', () => {
+        button.style.transform = 'scale(1)';
+      });
+      button.addEventListener('mouseleave', () => {
+        button.style.transform = 'scale(1)';
+      });
+    });
+
+    // Lazy scroll reveal simulation
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-8');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
+      observer.observe(section);
+    });
+  </script>
+
+
+</body></html>
